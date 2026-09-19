@@ -1,0 +1,228 @@
+/* Sai Senthamil Trust — complete replacement stylesheet */
+
+:root {
+    --green: #2f6b3b;
+    --dark-green: #163d2a;
+    --text: #1d2b22;
+    --muted: #666;
+    --soft: #f5f8f5;
+    --gold: #e6c65c;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding-top: 95px;
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border-radius: 18px;
+}
+
+section { scroll-margin-top: 100px; }
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 95px;
+    padding: 10px 5%;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { width: 75px; height: 75px; object-fit: contain; }
+.brand h2 { margin: 0; color: #27663b; font-size: 1.35rem; }
+.brand p { margin: 4px 0 0; color: var(--muted); font-size: .75rem; }
+
+.nav-links { display: flex; gap: 35px; }
+.nav-links a {
+    position: relative;
+    color: #222;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-links a::after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    content: "";
+    background: var(--green);
+    transition: width .3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 95px);
+    padding: 80px 8%;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url("images/hero.jpeg") center / cover;
+}
+.hero-content { max-width: 850px; }
+.hero-small { color: var(--gold); font-size: .94rem; font-weight: 700; letter-spacing: 3px; }
+.hero h1 { margin: 18px 0; font-size: clamp(42px, 6vw, 72px); line-height: 1.1; }
+.hero-description { max-width: 650px; margin: auto; color: #eee; font-size: 1.19rem; line-height: 1.7; }
+.hero-buttons { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px; margin-top: 35px; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+.primary { color: #fff; background: var(--green); }
+.secondary { color: #fff; border: 2px solid #fff; background: transparent; }
+.btn:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0, 0, 0, .3); }
+
+/* Shared headings */
+.section-label { color: #3b7d55; font-size: .88rem; font-weight: 700; letter-spacing: 2px; }
+.about, .services, .why-us, .facilities, .contact { padding: 100px 8%; }
+.services, .facilities { background: var(--soft); }
+
+/* About */
+.about { display: flex; align-items: center; gap: 70px; }
+.about-image, .about-content { width: 50%; }
+.about-image img { width: 100%; box-shadow: 0 15px 40px rgba(0, 0, 0, .12); }
+.about-content h2 { margin: 15px 0 25px; color: var(--text); font-size: clamp(34px, 4vw, 45px); }
+.about-content > p:not(.section-label) { color: var(--muted); font-size: 1.06rem; line-height: 1.8; }
+.about-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 28px;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Services */
+.services-heading, .why-header, .facilities-header { max-width: 750px; margin: 0 auto 60px; text-align: center; }
+.services-heading h2, .why-header h2, .facilities-header h2 { margin: 15px 0; color: var(--text); font-size: clamp(32px, 4vw, 45px); }
+.services-heading > p:not(.section-label), .why-header p, .facilities-header p { color: var(--muted); font-size: 1.06rem; line-height: 1.8; }
+.service-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.service-card {
+    padding: 30px 25px;
+    border-top: 4px solid #3b7d55;
+    border-radius: 10px;
+    background: #fff;
+}
+.service-card h3 { margin-top: 0; color: var(--text); font-size: 1.36rem; }
+.service-card p { color: var(--muted); line-height: 1.7; }
+
+/* Why us */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+.why-card { padding: 35px; border: 1px solid #e5ece5; border-radius: 15px; background: #f8fbf8; }
+.why-card h3 { margin: 0 0 15px; color: var(--green); }
+.why-card p { margin-bottom: 0; color: var(--muted); line-height: 1.7; }
+
+/* Cards and facility photos */
+.service-card, .why-card, .facility-item { transition: transform .35s ease, box-shadow .35s ease; }
+.service-card:hover, .why-card:hover, .facility-item:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, .12); }
+.facility-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.facility-item { overflow: hidden; border-radius: 18px; }
+.facility-item img { width: 100%; height: 320px; border-radius: 0; object-fit: cover; transition: transform .4s ease; }
+.facility-item:hover img { transform: scale(1.08); }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 60px; }
+.contact h2 { margin-top: 10px; font-size: clamp(32px, 4vw, 42px); }
+.contact-left > p:not(.section-label) { color: var(--muted); line-height: 1.8; }
+.contact-info { margin-top: 40px; }
+.info { margin-bottom: 30px; }
+.info h3 { margin-bottom: 8px; color: var(--green); }
+.info p { color: var(--muted); line-height: 1.7; }
+.contact form { display: flex; flex-direction: column; gap: 20px; }
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font: inherit;
+}
+.contact textarea { height: 180px; resize: vertical; }
+.contact input:focus, .contact textarea:focus { border-color: var(--green); outline: none; box-shadow: 0 0 10px rgba(47, 107, 59, .15); }
+.contact button { padding: 18px; border: 0; border-radius: 10px; color: #fff; background: var(--green); font: inherit; font-weight: 600; cursor: pointer; transition: background .3s ease; }
+.contact button:hover { background: #21512c; }
+
+/* Footer */
+footer { padding: 70px 8% 30px; color: #fff; background: var(--dark-green); }
+.footer-container { display: grid; grid-template-columns: 2fr 1fr 1fr; max-width: 1400px; gap: 50px; margin: auto; }
+.footer-about p, .footer-contact p { color: #ddd; line-height: 1.7; }
+.footer-links { display: flex; flex-direction: column; }
+.footer-links a { margin: 8px 0; color: #ddd; text-decoration: none; transition: color .3s ease; }
+.footer-links a:hover { color: var(--gold); }
+footer hr { margin: 50px 0 20px; border: 0; border-top: 1px solid rgba(255, 255, 255, .2); }
+.copyright { margin-bottom: 0; color: #ccc; text-align: center; }
+
+/* Scroll reveal: keep visible unless JavaScript adds the active state */
+.reveal { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+.reveal.active { opacity: 1; transform: none; }
+
+@media (max-width: 768px) {
+    body { padding-top: 82px; }
+    nav { min-height: 82px; padding: 7px 5%; }
+    .brand img { width: 58px; height: 58px; }
+    .brand h2 { font-size: 1rem; }
+    .brand p { font-size: .65rem; }
+    .nav-links { display: none; }
+    .hero { min-height: calc(100vh - 82px); padding: 70px 6%; }
+    .hero h1 { font-size: clamp(38px, 11vw, 52px); }
+    .hero-description { font-size: 1rem; }
+    .hero-buttons { flex-direction: column; }
+    .btn { min-width: 190px; }
+    .about, .services, .why-us, .facilities, .contact { padding: 75px 6%; }
+    .about { flex-direction: column; gap: 35px; }
+    .about-image, .about-content { width: 100%; }
+    .contact, .footer-container { grid-template-columns: 1fr; gap: 35px; }
+    .facility-item img { height: 260px; }
+}
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-container {
+    overflow: hidden;
+    min-height: 320px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
